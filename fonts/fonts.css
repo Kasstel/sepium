@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'SF UI Display Medium';
+    src: url('sf-ui-display-medium-58646be638f96.woff') format('woff');
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    }
+
+@font-face {
+    font-family: 'SF UI Display Semibold';
+    src: url('sf-ui-display-semibold-58646eddcae92.woff') format('woff');
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF UI Display Bold';
+    src: url('sf-ui-display-bold-58646a511e3d9.woff') format('woff');
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}

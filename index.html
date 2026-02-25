@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тестовое задание</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/card.css">
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./fonts/fonts.css">
+</head>
+<body>
+  <div class="card-list">
+      <article class="card">
+        <a href="/card" target="_blank" class="card__overlay" aria-label="Открыть карточку товара"></a>
+        <div class="card__body">
+          <div class="card__slider swiper" data-slider >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide card__slide">
+                <img src="./img/kitchen1.png" alt="Кухня Нарцисс - вид 1" class="card__image">
+                <a 
+                  href="./img/kitchen1.png"
+                  class="card__zoom" 
+                  data-fancybox="gallery-1"
+                  data-caption="Кухня Нарцисс - вид 1"
+                  aria-label="Увеличить изображение 1 из 4">
+                  <svg class="card__zoom-image">
+                    <use xlink:href="img/sprite.svg#zoom-in"></use>
+                  </svg>
+                </a>
+              </div>
+              <div class="swiper-slide card__slide">
+                <img src="./img/kitchen2.png" alt="Кухня Нарцисс - вид 2" class="card__image">
+                <a 
+                    href="./img/kitchen2.png"
+                    class="card__zoom" 
+                    data-fancybox="gallery-2"
+                    data-caption="Кухня Нарцисс - вид 2"
+                    aria-label="Увеличить изображение 2 из 4">
+                    <svg class="card__zoom-image">
+                      <use xlink:href="img/sprite.svg#zoom-in"></use>
+                    </svg>
+                  </a>
+              </div>
+              <div class="swiper-slide card__slide">
+                <img src="./img/kitchen3.png" alt="Кухня Нарцисс - вид 3" class="card__image">
+                <a 
+                    href="./img/kitchen3.png"
+                    class="card__zoom" 
+                    data-fancybox="gallery-3"
+                    data-caption="Кухня Нарцисс - вид 3"
+                    aria-label="Увеличить изображение 3 из 4">
+                    <svg class="card__zoom-image">
+                      <use xlink:href="img/sprite.svg#zoom-in"></use>
+                    </svg>
+                  </a>
+              </div>
+              <div class="swiper-slide card__slide">
+                <img src="./img/kitchen4.png" alt="Кухня Нарцисс - вид 4" class="card__image">
+                <a 
+                    href="./img/kitchen4.png"
+                    class="card__zoom" 
+                    data-fancybox="gallery-4"
+                    data-caption="Кухня Нарцисс - вид 4"
+                    aria-label="Увеличить изображение 4 из 4">
+                    <svg class="card__zoom-image">
+                      <use xlink:href="img/sprite.svg#zoom-in"></use>
+                    </svg>
+                  </a>
+              </div>
+            </div>
+            <button class="card__slider-button card__slider-button--prev">
+                <svg><use xlink:href="img/sprite.svg#slider-arrow-left" ></use></svg>
+              </button>
+            <button class="card__slider-button card__slider-button--next">
+                <svg><use xlink:href="img/sprite.svg#slider-arrow-right"></use></svg>
+            </button>
+            <div class="card__slider-pagination swiper-pagination"></div>
+          </div>
+          
+          <div class="card__header block">
+            <div class="card__article">
+              <span class="basic-text">Артикул</span>
+              <span class="additional-text basic-text ">—</span>
+              <span class="basic-text">4607</span>
+            </div>
+            <h3 class="card__title line-clamp-2 h3-title">Угловая бежевая кухня на заказ с матовыми фасадами в современном стиле «Нарцисс»</h3>
+          </div>
+          <div class="card__materials block">
+            <p class="card__materials-text basic-text">Варианты материалов</p>
+            <div class="materials">
+              <div class="highlight"></div>
+              <button class="material active">
+                <div class="material-content">
+                  <svg class="material-checkMark check"><use xlink:href="img/sprite.svg#checkMark"></use></svg>
+                  <span class="material-text">ПВХ</span>
+                </div>
+              </button>
+              <button class="material">
+                <div class="material-content">
+                  <svg class="material-checkMark check"><use xlink:href="img/sprite.svg#checkMark"></use></svg>
+                  <span class="material-text">Эмаль</span>
+                </div>
+              </button>
+              <button class="material">
+                <div class="material-content">
+                  <svg class="material-checkMark check"><use xlink:href="img/sprite.svg#checkMark"></use></svg>
+                  <span class="material-text">Пластик</span></div>
+              </button>
+              <button class="material">
+                <div class="material-content">
+                  <svg class="material-checkMark check"><use xlink:href="img/sprite.svg#checkMark"></use></svg>
+                  <span class="material-text">Материал</span></div>
+              </button>
+            </div>
+          
+            </button>
+          </div>
+          <div class="card__buy-zone block">
+            <div class="card__price">
+              <span class="card__price-text basic-text">Цена от</span>
+              <h3 class="card__price-current h3-title">515 700 ₽</h3>
+              <span class="card__price-text basic-text">Погонный метр от</span>
+              <span class="additional-text basic-text">—</span>
+              <span class="card__price-metr basic-text">30 000 ₽</span>
+            </div>
+            <button class="card__button" data-buy>Заказать</button>
+          </div>
+          <div class="card__actions block">
+            <div class="card__like">
+              <svg class="card__like-icon"><use xlink:href="img/sprite.svg#like"></use></svg>
+              <span class="card__like-text">57</span>
+            </div>
+            <a href="/calc" target="_blank" class="card__link">Рассчитать стоимость</a>
+          </div>
+        </div>
+      </article>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="./js/slider.js"></script>
+  <script src="./js/highlight.js"></script>
+</body>
+ 
+</html>
