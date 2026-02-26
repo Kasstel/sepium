@@ -15,7 +15,7 @@
 
   /* Размеры */
   --font-size-base: 0.875rem;
-  --font-size-main: 1.375rem;
+  --font-size-main: clamp(0.875rem, 0.6353rem + 1.0959vw, 1.375rem);
 
   /* Отступы */
   --block-padding: 1.25rem;
