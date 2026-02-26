@@ -1,12 +1,62 @@
+.main{
+  padding-inline: clamp(1.875rem, -3.2791rem + 23.5616vw, 12.625rem);
+
+
+}
+
 .card-list{
-  width: 1106px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
 }
 
 .card{
+  position: relative;
+  background-color: #F6F6F6;
+  max-width: 500px;
+  width: 100%;
+}
+
+.card__overlay{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.card:hover .card__overlay {
+  background-color: rgba(var(--bg-color), 1);
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-  background-color: var(--bg-color)
+}
+
+.card__slider-description{
+  position: absolute;
+  padding: 20px;
+  bottom: 0;
+  text-align: center;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(2px);
+  background-color: rgba(0,0,0, 0.5);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card:hover .card__slider-description{
+  color: #ffff;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card__slider,
+.card__slider-button,
+.card__zoom,
+.card__buy-zone,
+.block {
+  position: relative; 
+  z-index: 2; 
+  pointer-events: auto;
 }
 
 .card__body{
@@ -17,6 +67,7 @@
   position: relative;
   width: 100%;
   border-radius: 8px 8px 0 0; 
+  z-index: 2;
 }
 
 
@@ -66,12 +117,17 @@
   right: 15px;
 }
 
+@media (max-width: 767px) {
+  .card__slider-button {
+    display: none;
+  }
+}
 
 .card__zoom{
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 10;
+  z-index: 11;
 
   width: 32px;
   height: 34px;
@@ -147,23 +203,20 @@
   font-family: var(--font-family-main);
   font-size: var(--font-size-main);
   color: var(--hglighting-color);
-  line-height: 1.5rem;
+  line-height: 1.6rem;
 }
 
 
 .materials{
   position: relative;
   display: flex;
-  gap: 5px;
-  padding: 6px;
   border-radius: 50px;
-  background: rgba(var(--bg-color),0.4);
   backdrop-filter: blur(20px);
 }
 
 .material{
   position: relative;
-  z-index: 0;
+  z-index: 1;
   border: none;
   background: transparent;
   border-radius: 40px;
@@ -173,15 +226,33 @@
   transition: color 0.3s ease;
 }
 
+
+
+.check-wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 6%;
+
+}
+
+
 .material-checkMark{
-  width: 11px;
-  height: 8px;
+  width: 18px;
+  height: 18px;
   background-color: var(--default-unactive-color);
   color: white;
-  transform: scale(0.3);
-  display: none;
-  transition: transform 2s cubic-bezier(.34,1.56,.64,1),
-              display 1s ease;
+  
+  border-radius: 50%;
+  fill: none;
+  padding: 2px;
+  margin-left: 6px;
+  transform: scale(0.1);
+  opacity: 0;
+
+  transition: transform 0.35s cubic-bezier(.34,1.56,.64,1),
+              opacity 0.2s ease;
   flex-shrink: 0;
 }
 
@@ -190,25 +261,9 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 6px 3px 6px 12px;
 }
 
-.check {
-  width: 18px;
-  height: 18px;
- 
-  border-radius: 50%;
-  fill: none;
-  padding: 2px;
-  transform: scale(0.2);
-  display: none;
-  transition: 
-    transform 2s cubic-bezier(0.34, 1.56, 0.64, 1),
-    display 1s ease;
-}
-
-.material.active {
-  padding: 6px 9px 6px 12px;
-}
 
 .material.active .material-content {
   color: rgb(255, 255, 255);
@@ -216,13 +271,14 @@
 
 .material.active .material-checkMark {
   transform: scale(1);
-  display: block;
+  opacity: 1;
 }
 
 .material.active .material-text{
   background-color: transparent;
-  padding: 0;
+  padding: 0 30px 0 0;
   color: rgb(255, 255, 255);
+  transform: translateX(25px);
 }
 .material-text{
   background-color: var(--default-unactive-color);
@@ -232,6 +288,10 @@
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
   color: var(--hglighting-color)
+}
+
+.material-text {
+  transition: transform 0.35s cubic-bezier(.34,1.56,.64,1);
 }
 
 .highlight {
@@ -249,7 +309,7 @@
     0 4px 15px rgba(0,0,0,0.15),
     inset 0 1px 1px rgba(255,255,255,0.3);
   
-    z-index: 0;
+  z-index: 0;
 }
 
 .card__price-metr{
@@ -261,6 +321,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-inline: var(--block-padding);
+  padding-top: 0.8125rem;
+  padding-bottom: var(--block-padding);
 }
 
 .card__button{
@@ -271,6 +334,11 @@
   font-size: 15px;
   color: white;
   transition: background-color 0.2s ease;
+  opacity: 0;
+}
+
+.card:hover .card__button{
+  opacity: 1;
 }
 
 .card__button:hover{
@@ -281,3 +349,74 @@
   background-color: var(--accent-color);
 }
 
+
+.card__actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.875rem;
+  border-top: 1px solid var(--default-unactive-color);
+  padding-top: 0,875rem;
+}
+
+
+.card__like{
+  display: flex;
+  gap: 8px;
+  padding-left: 1rem;
+}
+
+.card__like-button{
+  color: var(--like-color);
+}
+
+.card__like-button:hover{
+  opacity: 0.7
+}
+
+.card__like-icon{
+  width: 1.03125rem;
+  height: 0.9175rem;
+  fill: var(--default-unactive-color);
+  cursor: pointer;
+  transition: fill 0.3s ease ;
+}
+
+.card__like-button.active .card__like-icon{
+  color: var(--accent-color);
+  animation: likePop 0.3s ease;
+}
+
+@keyframes likePop {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.card__like-text{
+  font-family: var(--font-family-bold);
+  font-size: var(--font-size-base);
+  color: var(--hglighting-color);
+}
+
+.card__summary{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--font-base-color);
+}
+
+.card__summary:hover .card__link, .card__summary:hover .card__link-icon{
+  color: var(--accent-color);
+}
+
+.card__link{
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  text-decoration: none;
+}
+
+.card__link-icon{
+  width: 0.75rem;
+  height: 0.75rem;
+}

@@ -11,15 +11,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
       slidesPerView: 1,
 
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+
       navigation: {
         nextEl: sliderElement.querySelector('.card__slider-button--next'),
         prevEl: sliderElement.querySelector('.card__slider-button--prev'),},
       pagination: {
         el: sliderElement.querySelector('.swiper-pagination'),
-        clickable: true, // Можно кликать на точки для перехода
-        type: 'bullets',  // Тип: bullets (точки), fraction (1/5), progressbar
+        clickable: true, 
+        type: 'bullets', 
       },
       
+      breakpoints: {
+
+        0: {
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+        },
+        
+        768: {
+          autoplay: false,
+        },
+      }     
+
       });
   });  
 });
