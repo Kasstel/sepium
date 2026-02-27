@@ -1,13 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
-  
-  const cards = document.querySelectorAll('[data-card]');
-  
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll("[data-card]");
+
   cards.forEach((card) => {
-    
-    // Клик на ЛЮБУЮ часть карточки
-    card.addEventListener('click', (e) => {
-      
-      // Проверяем, кликнули ли на интерактивный элемент
+    card.addEventListener("click", (e) => {
       const isInteractive = e.target.closest(`
         .card__slider-button,
         .card__zoom,
@@ -18,24 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
         .material,
         .swiper-pagination
       `);
-      
-      // Если кликнули НЕ на интерактивный элемент
+
       if (!isInteractive) {
-        // Открываем ссылку на карточку
-        window.open('/card', '_blank');
+        window.open("/card", "_blank");
       }
-      
     });
-    
-    // Hover-эффект (опционально)
-    card.addEventListener('mouseenter', () => {
-      card.style.cursor = 'pointer';
+
+    card.addEventListener("mouseenter", () => {
+      card.style.cursor = "pointer";
     });
-    
-    card.addEventListener('mouseleave', () => {
-      card.style.cursor = 'default';
+
+    card.addEventListener("mouseleave", () => {
+      card.style.cursor = "default";
     });
-    
   });
-  
 });

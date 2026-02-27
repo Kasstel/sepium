@@ -1,17 +1,17 @@
 :root {
   /* Цвета */
   --font-base-color: #656565;
-  --hglighting-color: #32312F;
-  --accent-color: #FF5C00;
+  --hglighting-color: #32312f;
+  --accent-color: #ff5c00;
   --accent-color-hover: #ff5e00ab;
-  --default-unactive-color: #F6F6F6;
+  --default-unactive-color: #f6f6f6;
   --bg-color: 255, 255, 255;
-  --like-color: #A1A5AD;
-  
+  --like-color: #a1a5ad;
+
   /* Шрифты */
-  --font-family-base: 'SF UI Display Medium', Arial, sans-serif;
-  --font-family-main: 'SF UI Display Semibold', Arial, sans-serif;
-  --font-family-bold: 'SF UI Display Bold', Arial, sans-serif;
+  --font-family-base: "SF UI Display Medium", Arial, sans-serif;
+  --font-family-main: "SF UI Display Semibold", Arial, sans-serif;
+  --font-family-bold: "SF UI Display Bold", Arial, sans-serif;
 
   /* Размеры */
   --font-size-base: 0.875rem;
